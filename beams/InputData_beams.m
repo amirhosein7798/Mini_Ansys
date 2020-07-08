@@ -1,12 +1,11 @@
 %El_number is the total number of elements
-El_number = 3;
+El_number = 2;
 %Node_number is the total number of node
-Node_number = 4;
+Node_number = 3;
 %   Element    1st    2nd      Ari(mm^2)  inertia(mm^4)  yang(pa)
 %   number     node   node        A             I            E
-AD =[1          1      2         6580        94.9*10^6      200*10^9;...
-     2          2      3         6580        94.9*10^6      200*10^9
-     3          3      4         6580        94.9*10^6      200*10^9];
+AD =[1          1      2         9420        163*10^4       200*10^9;...
+     2          2      3         9420        163*10^4       200*10^9];
  
 %  If you don't know anything about ux,uy,t,m,fx,fy leave the matrix blank
 
@@ -14,15 +13,14 @@ AD =[1          1      2         6580        94.9*10^6      200*10^9;...
 %    Node     x       y
 %    Num     (mm)     (mm)
 CO=[ 1       0        0    ;...
-     2       1200     0    ;...
-     3       2400     0    ;...
-     4       3600     0    ];
+     2       2400     0    ;...
+     3       4800     0    ];
 
  %known_displacements 
  %     node    uy
  %     num    (mm)   
  uy = [  1      0;...
-         4      0];
+        3      0];
     
  %known_displacements 
  %     node    ux
@@ -37,10 +35,9 @@ CO=[ 1       0        0    ;...
  %known_momentom 
  %     node    M
  %     num       
- m = [  1      18;...
+ m = [  1      0;...
         2      0;...
-        3      0;...
-        4      27];
+        3      0];
  %known_force
  %     node    fx
  %     num    (N)
@@ -49,5 +46,4 @@ CO=[ 1       0        0    ;...
  %known_force 
  %     node    fy
  %     num    (N) 
- fy = [2     -24000
-       3     -48000];
+ fy = [2     -160*10^3];
